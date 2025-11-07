@@ -1,5 +1,3 @@
-Sure! Here's the README formatted as a Markdown file (`README.md`):
-
 ```markdown
 # Dashcam-POV
 
@@ -112,9 +110,4 @@ end)
 * Auto-updates LVC lights and siren every 500ms.
 * Compatible with **FiveM latest versions**.
 
-```
-
-This can be saved directly as `README.md` and will render nicely in GitHub or other Markdown viewers.  
-
-Do you want me to also **add a screenshot section** for the HUD in the README?
 ```
