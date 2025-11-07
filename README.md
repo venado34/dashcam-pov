@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/23424602/README.md)
 # FiveM Dashcam
 > A FiveM server-sided script that allows a dashcam view for police vehicles
 

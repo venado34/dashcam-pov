@@ -1,7 +1,6 @@
 DashcamConfig = {}
 
 DashcamConfig.ToggleCommand = "toggledashcam"
-DashcamConfig.SetDash = "setdash"
 
 DashcamConfig.useMPH = true -- False will turn it to KMH
 DashcamConfig.StateOfCam = "Phoenix Protocol"

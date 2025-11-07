@@ -7,26 +7,42 @@
 
 <body>
     <div id="Dashcam_Body" v-show="showDash">
-        <div id="Dashcam_Data">
-            <div id="Dashcam_Time">{{clockTime.month}}-{{clockTime.day}}-{{clockTime.year}} -
-                {{clockTime.hour}}:{{clockTime.minute}}:{{clockTime.second}}</div>
-            <div id="Dashcam_BPD">{{ department }} CAR INFO</div>
-            <div id="Dashcam_CAM1">* {{ callsign }} <span :class="{ 'active': lightsOn }">L</span> <span
-                    :class="{ 'active': sirenOn }">S</span></div>
-            <div id="Dashcam_Speed">{{ Math.floor(unitSpeed) }} {{ useMPH ? 'MPH' : 'KMH' }}</div>
-            <div>
-                <div id="Dashcam_Info">
-                    <div>{{ dashMessageOne }}</div>
-                    <div
-                        style="color: rgb(25, 167, 255); font-size: 25px; font-weight: bold; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;">
-                        {{ dashLabel }}</div>
 
-                    <img id="Dashcam_Seal" src="./images/seal.png">
+        <!-- Scanlines overlay -->
+        <div id="Dashcam_Scanline"></div>
 
+        <!-- Top-right HUD -->
+        <div id="Dashcam_TopRight_BG">
+            <div id="Dashcam_TopRight">
+
+                <!-- LVC Lights/Siren -->
+                <div id="Dashcam_CAM1">
+                    <span :class="{ 'active-l': lightsOn }">L</span>
+                    <span :class="{ 'active-s': sirenOn }">S</span>
                 </div>
+
+                <!-- Department -->
+                <div id="Dashcam_BPD">{{ department }} CAR INFO</div>
+
+                <!-- Time -->
+                <div id="Dashcam_Time">{{ displayClock }}</div>
+
+                <!-- Speed -->
+                <div id="Dashcam_Speed">{{ displaySpeed }} {{ useMPH ? 'MPH' : 'KMH' }}</div>
+
+                <!-- Callsign -->
+                <div id="Dashcam_Callsign">{{ callsign }}</div>
             </div>
         </div>
+
+        <!-- Center-bottom branding -->
+        <div id="Dashcam_Info">
+            <div>{{ dashMessageOne }}</div>
+            <div class="dash-label">{{ dashLabel }}</div>
+            <img id="Dashcam_Seal" src="./images/seal.png">
+        </div>
     </div>
+
     <script src="./vue.min.js"></script>
     <script src="./script.js"></script>
 </body>
