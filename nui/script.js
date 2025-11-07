@@ -3,9 +3,9 @@ const Dashcam = new Vue({
     data: {
         showDash: false,
         dashMessageOne: "Property of",
-        dashLabel: "Phoenix Protocol",
-        department: "PPRP",
-        callsign: "CAM-1",
+        dashLabel: "Server Name",
+        department: "LSPD",
+        callsign: "L-989",
         unitSpeed: 0,
         targetSpeed: 0,
         useMPH: true,
