@@ -1,4 +1,4 @@
-```markdown
+````markdown
 # Dashcam-POV
 
 A fully immersive police dashcam HUD for FiveM, supporting **lights & siren status via LVC**, smooth speed display, local PC time, and auto camera tracking.
@@ -22,11 +22,9 @@ A fully immersive police dashcam HUD for FiveM, supporting **lights & siren stat
 1. Place the `dashcam-pov` folder in your server's `resources` directory.  
 2. Add to `server.cfg`:
 
-```
-
+```cfg
 ensure dashcam-pov
 ensure lvc
-
 ````
 
 3. Open `client.lua` and configure `DashcamConfig`:
@@ -39,7 +37,7 @@ DashcamConfig = {
     AllowedVehicles = {"police", "police2"},
     useMPH = true
 }
-````
+```
 
 4. Open `nui/script.js` and configure the Dashcam initial data:
 
@@ -63,7 +61,7 @@ data: {
 * `dashLabel` – server or department label.
 * `department` – initial department display (will always be uppercase if changed via `/setdash`).
 * `callsign` – initial unit callsign display (uppercase via `/setdash`).
-* `unitSpeed` / `targetSpeed` – initial speed values; targetSpeed updates from vehicle.
+* `unitSpeed` / `targetSpeed` – initial speed values; `targetSpeed` updates from vehicle.
 * `useMPH` – toggle MPH (true) or KMH (false).
 * `lightsOn` / `sirenOn` – initial LVC light/siren state (updated dynamically).
 
@@ -76,7 +74,7 @@ data: {
 * **Toggle Dashcam:** Press `C` (default, configurable via `DashcamConfig.ToggleCommand`).
 * **Set Department & Callsign:**
 
-```
+```txt
 /setdash [DEPARTMENT] [CALLSIGN]
 ```
 
@@ -88,7 +86,6 @@ Automatically converts input to **uppercase** for HUD display.
 
 Dashcam requires LVC to display lights and siren status. Your LVC exports should include:
 
-`lvc\UTIL\cl_lvc.lua`
 ```lua
 -- Lights
 exports('getLightStatus', function()
@@ -135,6 +132,3 @@ end)
 * Compatible with **FiveM latest versions**.
 
 ```
-
----
-
