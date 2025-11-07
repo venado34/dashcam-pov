@@ -1,4 +1,3 @@
-````markdown
 # Dashcam-POV
 
 A fully immersive police dashcam HUD for FiveM, supporting **lights & siren status via LVC**, smooth speed display, local PC time, and auto camera tracking.
