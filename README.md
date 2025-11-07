@@ -36,14 +36,38 @@ DashcamConfig = {
     ToggleCommand = "toggledash",
     RestrictVehicles = true,
     RestrictionType = "custom", -- "custom" or "class"
+    AllowedVehicles = {"police", "police2"},
     useMPH = true
-    
-    AllowedVehicles = {
-        "police",
-        "police2"
-    },
 }
 ````
+
+4. Open `nui/script.js` and configure the Dashcam initial data:
+
+```js
+data: {
+    showDash: false,
+    dashMessageOne: "Property of",
+    dashLabel: "Server Name",
+    department: "LSPD",
+    callsign: "L-989",
+    unitSpeed: 0,
+    targetSpeed: 0,
+    useMPH: true,
+    lightsOn: false,
+    sirenOn: false
+},
+```
+
+* `showDash` – initial visibility of the dashcam HUD.
+* `dashMessageOne` – text above the label (e.g., "Property of").
+* `dashLabel` – server or department label.
+* `department` – initial department display (will always be uppercase if changed via `/setdash`).
+* `callsign` – initial unit callsign display (uppercase via `/setdash`).
+* `unitSpeed` / `targetSpeed` – initial speed values; targetSpeed updates from vehicle.
+* `useMPH` – toggle MPH (true) or KMH (false).
+* `lightsOn` / `sirenOn` – initial LVC light/siren state (updated dynamically).
+
+5. Place `seal.png` in the `nui/images/` folder. This will display the department/server emblem on the dashcam HUD.
 
 ---
 
@@ -64,7 +88,7 @@ Automatically converts input to **uppercase** for HUD display.
 
 Dashcam requires LVC to display lights and siren status. Your LVC exports should include:
 
-UTIL/cl_lvc.lua
+`lvc\UTIL\cl_lvc.lua`
 ```lua
 -- Lights
 exports('getLightStatus', function()
@@ -88,11 +112,11 @@ end)
 
 ## NUI HUD
 
-* **Clock:** Top-right corner, local PC time.
+* **Clock:** Top-right corner, local PC time (MM-DD-YYYY).
 * **Department & Callsign:** Below clock, uppercase.
 * **Lights (L) and Siren (S):** Light up dynamically.
 * **Speed:** MPH or KMH, right-aligned.
-* **Property Label & Seal:** Centered text and emblem.
+* **Property Label & Seal:** Centered text and emblem (`seal.png` from `nui/images/`).
 
 ---
 
@@ -111,3 +135,6 @@ end)
 * Compatible with **FiveM latest versions**.
 
 ```
+
+---
+
