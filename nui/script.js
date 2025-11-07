@@ -3,17 +3,15 @@ const Dashcam = new Vue({
 
     data: {
         showDash: false,
-
-        gameTime: 0,
         clockTime: {},
-        unitNumber: 0,
-        unitName: "",
+        dashMessageOne: "Property of",
+        dashLabel: "Phoenix Protocol",
+        department: "PPRP",
+        callsign: "CAM-1",
         unitSpeed: 0,
-        unitSpeedType: "MPH",
-
-        dashMessageOne: "This vehicle is licensed to the",
-        dashLabel: "State of San Andreas",
-        dashMessageTwo: "Any unauthorized use is subject to heavy penalty under 13 S.A. Pen. Code 502(a)."
+        useMPH: true,
+        lightsOn: false,
+        sirenOn: false
     },
 
     methods: {
@@ -27,17 +25,13 @@ const Dashcam = new Vue({
         },
 
         UpdateDashcam(data) {
-            this.gameTime = data.gameTime;
             this.clockTime = data.clockTime;
-            this.unitNumber = data.unitNumber;
-            this.unitName = data.unitName;
-            this.unitSpeed = Math.round(data.unitSpeed);
-
-            if (data.useMPH) {
-                this.unitSpeedType = "MPH";
-            } else {
-                this.unitSpeedType = "KMH";
-            };
+            this.department = data.department;
+            this.callsign = data.callsign;
+            this.unitSpeed = data.unitSpeed;
+            this.useMPH = data.useMPH;
+            this.lightsOn = data.lightsOn;
+            this.sirenOn = data.sirenOn;
         },
 
     }
